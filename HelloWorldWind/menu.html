@@ -2,13 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Website Menu with Video Background</title>
+    <title>Menu</title>
     <style>
         body {
             margin: 0;
             padding: 0;
             background: #000;
             overflow: hidden;
+            font-family: Arial, sans-serif;
         }
 
         #video-background {
@@ -29,6 +30,7 @@
             transform: translate(-50%, -50%);
             text-align: center;
             color: #fff;
+            z-index: 1;
         }
 
         #start-button {
@@ -48,7 +50,7 @@
             width: 60px;
             height: 60px;
             background-color: #ccc;
-            border-radius: 75%;
+            border-radius: 50%;
             cursor: pointer;
             text-align: center;
             line-height: 60px;
@@ -71,6 +73,20 @@
         #help-button:hover + #help-popup {
             display: block;
         }
+
+        /* Style for the scrollable content */
+        #scrollable-content {
+            position: absolute;
+            top: 100%; /* Position it below the menu */
+            width: 100%;
+            background: #000;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            z-index: 1; /* Place it above the video */
+        }
+
+        /* Add more styles for text and designs as needed */
     </style>
 </head>
 <body>
@@ -90,6 +106,13 @@
     <!-- Help pop-up content -->
     <div id="help-popup">
         <p>Website with an interactive globe to see how the world is changing. Feel free and click on start.</p>
+    </div>
+
+    <!-- Scrollable content below the video -->
+    <div id="scrollable-content">
+        <h2>Scroll Down for More</h2>
+        <p>Add your text and designs here.</p>
+        <!-- Add additional content as needed -->
     </div>
 </body>
 </html>
