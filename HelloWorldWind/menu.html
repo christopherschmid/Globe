@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Website Menu with Video Background</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #000;
+            overflow: hidden;
+        }
+
+        #video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1000;
+        }
+
+        #menu-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: #fff;
+        }
+
+        #start-button {
+            background-color: #ff5733;
+            color: #fff;
+            padding: 15px 90px;
+            border: none;
+            cursor: pointer;
+            font-size: 30px;
+        }
+
+        /* Style for the help button */
+        #help-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 60px;
+            height: 60px;
+            background-color: #ccc;
+            border-radius: 75%;
+            cursor: pointer;
+            text-align: center;
+            line-height: 60px;
+            font-size: 40px;
+        }
+
+
+
+        /* Style for the help content pop-up */
+        #help-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <video id="video-background" autoplay muted loop>
+        <source src="background.mp4" type="video/mp4">
+    </video>
+
+    <div id="menu-container">
+        <h1>Welcome to Our Website</h1>
+        <p>Discover amazing content and more!</p>
+        <button id="start-button" onclick="window.location.href='index.html'">Start</button>
+    </div>
+
+    <!-- Help button -->
+    <div id="help-button" onclick="showHelp()">?</div>
+
+    <!-- Help pop-up content -->
+    <div id="help-popup">
+        <p>Website with an interactive globe to see how the world is changing. Feel free and click on start.</p>
+        <button onclick="hideHelp()">Close</button>
+    </div>
+
+    <script>
+        function showHelp() {
+            document.getElementById("help-popup").style.display = "block";
+        }
+
+        function hideHelp() {
+            document.getElementById("help-popup").style.display = "none";
+        }
+    </script>
+</body>
+</html>
