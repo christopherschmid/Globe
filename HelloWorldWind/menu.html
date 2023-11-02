@@ -55,19 +55,21 @@
             font-size: 40px;
         }
 
-
-
         /* Style for the help content pop-up */
         #help-popup {
             display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            position: absolute;
+            top: 70px;
+            right: 10px;
             padding: 20px;
             background: #fff;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
             z-index: 1000;
+        }
+
+        /* Show help content on hover */
+        #help-button:hover + #help-popup {
+            display: block;
         }
     </style>
 </head>
@@ -83,22 +85,11 @@
     </div>
 
     <!-- Help button -->
-    <div id="help-button" onclick="showHelp()">?</div>
+    <div id="help-button">?</div>
 
     <!-- Help pop-up content -->
     <div id="help-popup">
         <p>Website with an interactive globe to see how the world is changing. Feel free and click on start.</p>
-        <button onclick="hideHelp()">Close</button>
     </div>
-
-    <script>
-        function showHelp() {
-            document.getElementById("help-popup").style.display = "block";
-        }
-
-        function hideHelp() {
-            document.getElementById("help-popup").style.display = "none";
-        }
-    </script>
 </body>
 </html>
